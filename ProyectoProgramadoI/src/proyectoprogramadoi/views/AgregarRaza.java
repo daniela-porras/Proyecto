@@ -24,7 +24,39 @@ public class AgregarRaza extends javax.swing.JFrame {
         tablaRaza.setColumnIdentifiers(titulo);
         tabel.setModel(tablaRaza);
     }
-
+    
+    void agregar()
+    {
+        tablaRaza.addRow(new Object[]
+                {
+                    txtCodigoRaza.getText(),
+                    txtNombreRaza.getText(),
+                    txtPrecioKilo.getText()
+                });
+    }
+    
+    void eliminar()
+    {
+        int fila = tabel.getSelectedRow();
+        tablaRaza.removeRow(fila);
+        
+    }
+    
+    void modificar()
+    {
+        int fila = tabel.getSelectedRow();
+        tablaRaza.setValueAt(txtCodigoRaza.getText(),fila,0);
+        tablaRaza.setValueAt(txtNombreRaza.getText(),fila,1);
+        tablaRaza.setValueAt(txtPrecioKilo.getText(),fila,2);
+    }
+    
+    void limpiar()
+    {
+        txtCodigoRaza.setText("");
+        txtNombreRaza.setText("");
+        txtPrecioKilo.setText("");
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -43,10 +75,12 @@ public class AgregarRaza extends javax.swing.JFrame {
         txtCodigoRaza = new javax.swing.JTextField();
         txtNombreRaza = new javax.swing.JTextField();
         txtPrecioKilo = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnAgregarRaza = new javax.swing.JButton();
+        btnBuscarRaza = new javax.swing.JButton();
+        btnEditarRaza = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        btnEliminarRaza = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,13 +118,42 @@ public class AgregarRaza extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Agregar");
+        btnAgregarRaza.setText("Agregar");
+        btnAgregarRaza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarRazaActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Buscar");
+        btnBuscarRaza.setText("Buscar");
 
-        jButton3.setText("Editar");
+        btnEditarRaza.setText("Editar");
+        btnEditarRaza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarRazaActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Salir");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        btnEliminarRaza.setText("Eliminar");
+        btnEliminarRaza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarRazaActionPerformed(evt);
+            }
+        });
+
+        btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -100,13 +163,18 @@ public class AgregarRaza extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(btnLimpiar))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3)
-                            .addComponent(jButton4)))
+                            .addComponent(btnBuscarRaza)
+                            .addComponent(btnEditarRaza)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(btnEliminarRaza)
+                                .addComponent(jButton4))
+                            .addComponent(btnAgregarRaza)))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel1)
@@ -133,19 +201,23 @@ public class AgregarRaza extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtPrecioKilo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtNombreRaza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnLimpiar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(btnAgregarRaza)
+                        .addGap(12, 12, 12)
+                        .addComponent(btnBuscarRaza)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton3)
+                        .addComponent(btnEditarRaza)
+                        .addGap(19, 19, 19)
+                        .addComponent(btnEliminarRaza)
                         .addGap(18, 18, 18)
                         .addComponent(jButton4)))
                 .addGap(51, 51, 51))
@@ -173,6 +245,27 @@ public class AgregarRaza extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPrecioKiloActionPerformed
 
+    private void btnAgregarRazaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarRazaActionPerformed
+        agregar();
+    }//GEN-LAST:event_btnAgregarRazaActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void btnEliminarRazaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarRazaActionPerformed
+        eliminar();
+    }//GEN-LAST:event_btnEliminarRazaActionPerformed
+
+    private void btnEditarRazaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarRazaActionPerformed
+        modificar();
+    }//GEN-LAST:event_btnEditarRazaActionPerformed
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        limpiar();
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    
     /**
      * @param args the command line arguments
      */
@@ -209,9 +302,11 @@ public class AgregarRaza extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnAgregarRaza;
+    private javax.swing.JButton btnBuscarRaza;
+    private javax.swing.JButton btnEditarRaza;
+    private javax.swing.JButton btnEliminarRaza;
+    private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

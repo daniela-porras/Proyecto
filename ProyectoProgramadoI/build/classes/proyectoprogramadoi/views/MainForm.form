@@ -28,21 +28,18 @@
             <Property name="text" type="java.lang.String" value="Administraci&#xf3;n Informaci&#xf3;n Ganaderos"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3Raza">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Agregar Ganadero"/>
+                <Property name="text" type="java.lang.String" value="AgregarRaza"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem3ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem3RazaActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
+            <MenuItem class="javax.swing.JMenuItem" name="AgregarRazajMenuItem">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Agregar Razas"/>
+                <Property name="text" type="java.lang.String" value="AgregarGanadero"/>
               </Properties>
-              <AccessibilityProperties>
-                <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Agregar Razas"/>
-              </AccessibilityProperties>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -66,6 +63,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="name" type="java.lang.String" value="PrinciparFrame" noResource="true"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>

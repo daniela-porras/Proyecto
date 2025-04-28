@@ -8,16 +8,17 @@ package proyectoprogramadoi.models;
  *
  * @author diego
  */
-public class Raza 
-{
-  private String nombreRaza;
-  private double precioKilo;
-  private String codigo;
+public class Raza {
 
-  public Raza()
-  {
-  
-  };
+    private String nombreRaza;
+    private double precioKilo;
+    private String codigo;
+
+    public Raza() {
+
+    }
+
+    ;
 
     public String getNombreRaza() {
         return nombreRaza;
@@ -42,5 +43,5 @@ public class Raza
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
- 
+
 }

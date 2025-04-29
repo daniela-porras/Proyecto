@@ -23,7 +23,7 @@
     </Component>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="jMenu1">
+        <Menu class="javax.swing.JMenu" name="MenuAgregarRaza">
           <Properties>
             <Property name="text" type="java.lang.String" value="Administraci&#xf3;n Informaci&#xf3;n Ganaderos"/>
           </Properties>

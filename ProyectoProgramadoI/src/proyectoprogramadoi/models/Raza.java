@@ -14,8 +14,11 @@ public class Raza {
     private double precioKilo;
     private String codigo;
 
-    public Raza() {
-
+    public Raza(String _codigo, String _nombreRaza, double _precioKilo) 
+    {
+      this.codigo=_codigo;
+      this.nombreRaza=_nombreRaza;
+      this.precioKilo=_precioKilo;
     }
 
     ;

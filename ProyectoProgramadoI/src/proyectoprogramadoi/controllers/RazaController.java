@@ -19,11 +19,11 @@ public class RazaController implements RazaInterface {
         {
             return "error: Ya existe el Codigo de la Raza!!";
         }
-        //double valor = Double.parseDouble(data[2]);
+        
         Raza obj = new Raza(data[0],data[1],Double.parseDouble(data[2]));
-        
-        
-        return "Message"+data[0]+" "+data[1]+" "+data[2];
+        boolean done=RazaContainer.store(obj);
+        if(done)return "done: Raza guardada con exito";
+        return "erorr: Error al guardar los datos";
     }
 
     @Override

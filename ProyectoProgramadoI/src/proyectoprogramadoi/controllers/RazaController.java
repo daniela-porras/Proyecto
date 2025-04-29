@@ -4,10 +4,46 @@
  */
 package proyectoprogramadoi.controllers;
 
+import proyectoprogramadoi.models.Raza;
+import proyectoprogramadoi.models.containers.RazaContainer;
+
 /**
  *
  * @author diego
  */
-public class RazaController {
-    
+public class RazaController implements RazaInterface {
+
+    @Override
+    public String store(String[] data) {
+        if(RazaContainer.exist(data[0]))
+        {
+            return "error: Ya existe el Codigo de la Raza!!";
+        }
+        
+        Raza obj = new Raza(data[0],data[1],Double.parseDouble(data[2]));
+        boolean done=RazaContainer.store(obj);
+        if(done)return "done: Raza guardada con exito";
+        return "erorr: Error al guardar los datos";
+    }
+
+    @Override
+    public String[] find(String codigoRaza) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public String update(String[] data) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public String delete(String codigoRaza) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public String[][] getAll() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+   
 }

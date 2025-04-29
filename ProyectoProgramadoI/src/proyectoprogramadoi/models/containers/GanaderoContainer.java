@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package proyectoprogramadoi.containers;
+package proyectoprogramadoi.models.containers;
 
 import proyectoprogramadoi.models.Ganadero;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.function.Consumer;
 /**
  *
- * @author usuario1
+ * @author diego
  */
 public class GanaderoContainer {
     

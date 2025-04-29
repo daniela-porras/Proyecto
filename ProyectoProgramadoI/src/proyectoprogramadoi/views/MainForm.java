@@ -4,6 +4,8 @@
  */
 package proyectoprogramadoi.views;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author usuario1
@@ -13,8 +15,14 @@ public class MainForm extends javax.swing.JFrame {
     /**
      * Creates new form MainForm
      */
+   
+    AgregarRaza tablaRaza;
+    
     public MainForm() {
         initComponents();
+       tablaRaza = new AgregarRaza();
+       this.jMenuBar1.add(tablaRaza);
+        
     }
 
     /**
@@ -30,9 +38,9 @@ public class MainForm extends javax.swing.JFrame {
         jMenu5 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        MenuAgregarRaza = new javax.swing.JMenu();
+        jMenuItem3Raza = new javax.swing.JMenuItem();
+        AgregarRazajMenuItem = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
@@ -44,27 +52,27 @@ public class MainForm extends javax.swing.JFrame {
         jMenuItem2.setText("jMenuItem2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setName("PrinciparFrame"); // NOI18N
 
-        jMenu1.setText("Administraci贸n Informaci贸n Ganaderos");
+        MenuAgregarRaza.setText("Administraci髇 Informaci髇 Ganaderos");
 
-        jMenuItem3.setText("Agregar Ganadero");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem3Raza.setText("AgregarRaza");
+        jMenuItem3Raza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                jMenuItem3RazaActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem3);
+        MenuAgregarRaza.add(jMenuItem3Raza);
 
-        jMenuItem4.setText("Agregar Razas");
-        jMenu1.add(jMenuItem4);
-        jMenuItem4.getAccessibleContext().setAccessibleName("Agregar Razas");
+        AgregarRazajMenuItem.setText("AgregarGanadero");
+        MenuAgregarRaza.add(AgregarRazajMenuItem);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(MenuAgregarRaza);
 
-        jMenu2.setText("Administraci贸n Precios Ganado");
+        jMenu2.setText("Administraci髇 Precios Ganado");
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setText("Recepci贸n y Facturaci贸n Ganado");
+        jMenu3.setText("Recepci髇 y Facturaci髇 Ganado");
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Salir");
@@ -86,47 +94,18 @@ public class MainForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    private void jMenuItem3RazaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3RazaActionPerformed
+        tablaRaza.setVisible(true);
+    }//GEN-LAST:event_jMenuItem3RazaActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MainForm().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuItem AgregarRazajMenuItem;
+    private javax.swing.JMenu MenuAgregarRaza;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -134,7 +113,6 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem3Raza;
     // End of variables declaration//GEN-END:variables
 }

@@ -17,7 +17,7 @@ public class Ganado
 
   public Ganado()
   {
-      raza = new Raza();
+      //raza = new Raza();
   };
 
     public String getCodigoRaza() {

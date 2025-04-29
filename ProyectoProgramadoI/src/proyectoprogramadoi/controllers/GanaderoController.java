@@ -5,8 +5,9 @@
 package proyectoprogramadoi.controllers;
 
 import proyectoprogramadoi.models.Ganadero;
-import proyectoprogramadoi.containers.GanaderoContainer;
+
 import java.util.List;
+import proyectoprogramadoi.models.containers.GanaderoContainer;
 
 /**
  *

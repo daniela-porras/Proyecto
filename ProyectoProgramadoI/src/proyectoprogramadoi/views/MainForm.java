@@ -4,7 +4,6 @@
  */
 package proyectoprogramadoi.views;
 
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -16,19 +15,16 @@ public class MainForm extends javax.swing.JFrame {
     /**
      * Creates new form MainForm
      */
-    AgregarGanadero agregarGanadero;
+   
     AgregarRaza tablaRaza;
-    AgregarGanado agregarGanado;
+    
+    
     
     public MainForm() {
-       initComponents();
-       
-       agregarGanadero=new AgregarGanadero();
-       this.jMenuBar1.add(agregarGanadero);
+        initComponents();
        tablaRaza = new AgregarRaza();
        this.jMenuBar1.add(tablaRaza);
-       agregarGanado=new AgregarGanado();
-       this.jMenuBar1.add(agregarGanado);
+
        
         
     }
@@ -47,14 +43,12 @@ public class MainForm extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuBar1 = new javax.swing.JMenuBar();
         MenuAgregarRaza = new javax.swing.JMenu();
-        AgregarGanadero = new javax.swing.JMenuItem();
+        jMenuItem3Raza = new javax.swing.JMenuItem();
+        AgregarRazajMenuItem = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        AgregarRazas = new javax.swing.JMenuItem();
-        AgregarGanado = new javax.swing.JMenuItem();
+        MenuRaza = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        Salir = new javax.swing.JMenu();
-        Cerrar = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -65,69 +59,38 @@ public class MainForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("PrinciparFrame"); // NOI18N
 
-        jMenuBar1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        MenuAgregarRaza.setText("Administraciï¿½n Informaciï¿½n Ganaderos");
 
-        MenuAgregarRaza.setText("Administración Información Ganaderos");
-
-        AgregarGanadero.setText("Ganadero");
-        AgregarGanadero.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem3Raza.setText("AgregarRaza");
+        jMenuItem3Raza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AgregarGanaderoActionPerformed(evt);
+                jMenuItem3RazaActionPerformed(evt);
             }
         });
-        MenuAgregarRaza.add(AgregarGanadero);
+        MenuAgregarRaza.add(jMenuItem3Raza);
+
+        AgregarRazajMenuItem.setText("AgregarGanadero");
+        MenuAgregarRaza.add(AgregarRazajMenuItem);
 
         jMenuBar1.add(MenuAgregarRaza);
 
-        jMenu2.setText("Administración Ganado");
-        jMenu2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu2ActionPerformed(evt);
-            }
-        });
+        jMenu2.setText("Administraciï¿½n Precios Ganado");
 
-        AgregarRazas.setText("Razas");
-        AgregarRazas.addActionListener(new java.awt.event.ActionListener() {
+        MenuRaza.setText("Raza");
+        MenuRaza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AgregarRazasActionPerformed(evt);
+                MenuRazaActionPerformed(evt);
             }
         });
-        jMenu2.add(AgregarRazas);
-
-        AgregarGanado.setText("Ganado");
-        AgregarGanado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AgregarGanadoActionPerformed(evt);
-            }
-        });
-        jMenu2.add(AgregarGanado);
+        jMenu2.add(MenuRaza);
 
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setText("Facturación Ganado");
-
-        jMenuItem5.setText("Consulta Factura");
-        jMenu3.add(jMenuItem5);
-
+        jMenu3.setText("Recepciï¿½n y Facturaciï¿½n Ganado");
         jMenuBar1.add(jMenu3);
 
-        Salir.setText("Salir");
-        Salir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SalirActionPerformed(evt);
-            }
-        });
-
-        Cerrar.setText("Cerrar el Sistema");
-        Cerrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CerrarActionPerformed(evt);
-            }
-        });
-        Salir.add(Cerrar);
-        Cerrar.getAccessibleContext().setAccessibleName("Cerrar el Sistema");
-
-        jMenuBar1.add(Salir);
+        jMenu4.setText("Salir");
+        jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
 
@@ -139,36 +102,20 @@ public class MainForm extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 306, Short.MAX_VALUE)
+            .addGap(0, 310, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AgregarGanaderoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarGanaderoActionPerformed
-        agregarGanadero.setVisible(true);
-    }//GEN-LAST:event_AgregarGanaderoActionPerformed
+    private void jMenuItem3RazaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3RazaActionPerformed
+        //tablaRaza.setVisible(true);
+    }//GEN-LAST:event_jMenuItem3RazaActionPerformed
 
-    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
-        
-    }//GEN-LAST:event_SalirActionPerformed
-
-    private void CerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarActionPerformed
-        JOptionPane.showMessageDialog(null,"Gracias por usar el sistema\n¡Hasta pronto!");
-        System.exit(0);
-    }//GEN-LAST:event_CerrarActionPerformed
-
-    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
-        
-    }//GEN-LAST:event_jMenu2ActionPerformed
-
-    private void AgregarRazasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarRazasActionPerformed
+    private void MenuRazaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuRazaActionPerformed
+        // TODO add your handling code here:
         tablaRaza.setVisible(true);
-    }//GEN-LAST:event_AgregarRazasActionPerformed
-
-    private void AgregarGanadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarGanadoActionPerformed
-        agregarGanado.setVisible(true);
-    }//GEN-LAST:event_AgregarGanadoActionPerformed
+    }//GEN-LAST:event_MenuRazaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -176,18 +123,16 @@ public class MainForm extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem AgregarGanadero;
-    private javax.swing.JMenuItem AgregarGanado;
-    private javax.swing.JMenuItem AgregarRazas;
-    private javax.swing.JMenuItem Cerrar;
+    private javax.swing.JMenuItem AgregarRazajMenuItem;
     private javax.swing.JMenu MenuAgregarRaza;
-    private javax.swing.JMenu Salir;
+    private javax.swing.JMenuItem MenuRaza;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem3Raza;
     // End of variables declaration//GEN-END:variables
 }

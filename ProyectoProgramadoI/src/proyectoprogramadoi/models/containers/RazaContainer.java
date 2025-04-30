@@ -4,8 +4,11 @@
  */
 package proyectoprogramadoi.models.containers;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.function.Consumer;
 import proyectoprogramadoi.models.Raza;
 
 /**
@@ -30,4 +33,17 @@ public class RazaContainer {
         }
         return false;
     }
+    
+    public static List getAll(){
+        List data=new ArrayList<Raza>();
+        container.values().iterator().forEachRemaining(new Consumer<Raza>(){
+            @Override
+            public void accept(Raza t) {
+                data.add(t);
+            }
+            
+        });
+        return data;
+    }
+    
 }

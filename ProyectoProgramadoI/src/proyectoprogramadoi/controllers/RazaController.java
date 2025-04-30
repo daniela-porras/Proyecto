@@ -4,6 +4,7 @@
  */
 package proyectoprogramadoi.controllers;
 
+import java.util.List;
 import proyectoprogramadoi.models.Raza;
 import proyectoprogramadoi.models.containers.RazaContainer;
 
@@ -11,7 +12,7 @@ import proyectoprogramadoi.models.containers.RazaContainer;
  *
  * @author diego
  */
-public class RazaController implements RazaInterface {
+public class RazaController implements RazaInterface, RazaListInterface {
 
     @Override
     public String store(String[] data) {
@@ -41,9 +42,19 @@ public class RazaController implements RazaInterface {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    @Override
-    public String[][] getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    
+       @Override
+        public String[][]getAll() {
+        List Razas=RazaContainer.getAll();        
+        String[][] data=new String[Razas.size()][3];
+        for(int i=0;i<Razas.size();i++){
+            Raza obj=(Raza) Razas.get(i);
+            data[i][0]=obj.getCodigo();
+            data[i][1]=obj.getNombreRaza();
+            data[i][2]= String.valueOf(obj.getPrecioKilo());
+        }
+        return data;
     }
+    
    
 }

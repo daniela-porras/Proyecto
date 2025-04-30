@@ -13,11 +13,12 @@ public class Ganado
   private String codigoRaza;
   private double peso;
   private double precioRes;
-  Raza raza;
 
-  public Ganado()
+  public Ganado(String _codigo,double _peso,double _precio)
   {
-      //raza = new Raza();
+      this.codigoRaza=_codigo;
+      this.peso=_peso;
+      this.precioRes=_precio;
   };
 
     public String getCodigoRaza() {

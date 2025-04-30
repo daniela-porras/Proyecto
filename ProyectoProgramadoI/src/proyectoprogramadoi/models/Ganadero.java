@@ -15,11 +15,14 @@ public class Ganadero
     private String direccion;
     private String email;
     private String telefono;
-    Ganado ganado;
     
-    public Ganadero()
+    public Ganadero(String _cedula,String _nombre,String _direc,String _email,String _tel)
     {
-        ganado = new Ganado();
+        this.cedula=_cedula;
+        this.nombre=_nombre;
+        this.direccion=_direc;
+        this.email=_email;
+        this.telefono=_tel;
     };
 
     public String getCedula() {

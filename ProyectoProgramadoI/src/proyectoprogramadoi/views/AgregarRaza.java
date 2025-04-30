@@ -5,8 +5,10 @@
 package proyectoprogramadoi.views;
 
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import proyectoprogramadoi.controllers.RazaController;
 import proyectoprogramadoi.controllers.RazaInterface;
+import proyectoprogramadoi.controllers.RazaListInterface;
 
 /**
  *
@@ -41,9 +43,28 @@ public class AgregarRaza extends javax.swing.JInternalFrame {
         txtCodigoRaza = new javax.swing.JTextField();
         txtPrecioKilo = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaRaza = new javax.swing.JTable();
         btnCerrar = new javax.swing.JButton();
         btnAgregarRaza = new javax.swing.JButton();
+
+        addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameActivated(evt);
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+            }
+        });
+        getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
 
         jLabel1.setText("Codigo Raza:");
 
@@ -57,7 +78,7 @@ public class AgregarRaza extends javax.swing.JInternalFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaRaza.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -68,7 +89,7 @@ public class AgregarRaza extends javax.swing.JInternalFrame {
                 "Codigo Raza", "Nombre Raza", "PrecioKilo"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaRaza);
 
         btnCerrar.setText("Cerrar");
         btnCerrar.addActionListener(new java.awt.event.ActionListener() {
@@ -134,16 +155,7 @@ public class AgregarRaza extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        getContentPane().add(jPanel1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -168,7 +180,21 @@ public class AgregarRaza extends javax.swing.JInternalFrame {
         };
         String msg = service.store(data);
         JOptionPane.showMessageDialog(this, msg,"Mensaje", JOptionPane.INFORMATION_MESSAGE);
+        
+        RazaListInterface tabla = new RazaController();
+        String Razas[][]=tabla.getAll();
+        String tHeaders[]={"Codigo Raza","Nombre Raza","Precio Kilo"};
+        tablaRaza.setModel(new DefaultTableModel(Razas,tHeaders));
+        this.pack();
+        
     }//GEN-LAST:event_btnAgregarRazaActionPerformed
+
+    private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
+        // TODO add your handling code here:
+       
+        
+        
+    }//GEN-LAST:event_formInternalFrameActivated
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -179,7 +205,7 @@ public class AgregarRaza extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tablaRaza;
     private javax.swing.JTextField txtCodigoRaza;
     private javax.swing.JTextField txtNombreRaza;
     private javax.swing.JTextField txtPrecioKilo;

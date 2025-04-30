@@ -18,10 +18,14 @@ public class MainForm extends javax.swing.JFrame {
    
     AgregarRaza tablaRaza;
     
+    
+    
     public MainForm() {
         initComponents();
        tablaRaza = new AgregarRaza();
        this.jMenuBar1.add(tablaRaza);
+
+       
         
     }
 
@@ -42,6 +46,7 @@ public class MainForm extends javax.swing.JFrame {
         jMenuItem3Raza = new javax.swing.JMenuItem();
         AgregarRazajMenuItem = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        MenuRaza = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
 
@@ -70,6 +75,15 @@ public class MainForm extends javax.swing.JFrame {
         jMenuBar1.add(MenuAgregarRaza);
 
         jMenu2.setText("Administración Precios Ganado");
+
+        MenuRaza.setText("Raza");
+        MenuRaza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuRazaActionPerformed(evt);
+            }
+        });
+        jMenu2.add(MenuRaza);
+
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Recepción y Facturación Ganado");
@@ -95,8 +109,13 @@ public class MainForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem3RazaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3RazaActionPerformed
-        tablaRaza.setVisible(true);
+        //tablaRaza.setVisible(true);
     }//GEN-LAST:event_jMenuItem3RazaActionPerformed
+
+    private void MenuRazaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuRazaActionPerformed
+        // TODO add your handling code here:
+        tablaRaza.setVisible(true);
+    }//GEN-LAST:event_MenuRazaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -106,6 +125,7 @@ public class MainForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AgregarRazajMenuItem;
     private javax.swing.JMenu MenuAgregarRaza;
+    private javax.swing.JMenuItem MenuRaza;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
